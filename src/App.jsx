@@ -24,7 +24,7 @@ function App() {
     if (mode === 'actors') finalQuery = query.split(',').map(name => name.trim());
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/recommend', {
+      const response = await fetch('https://movie-recommender-backend-alpha.vercel.app/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mode, query: finalQuery, by_leads: byLeads, exclude_ids: seenIds }),
